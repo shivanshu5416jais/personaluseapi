@@ -16,9 +16,9 @@ mongoose.connection.on('error',(err)=>{
 server.use(cors());
 server.use(express.json());
 server.use(routes);
- 
-server.listen(8000,function check(error)
-{
+const port =process.env.port || 8000
+server.listen(port,function check(error)
+{   
     if(error)
     {
         console.log("errorr")
